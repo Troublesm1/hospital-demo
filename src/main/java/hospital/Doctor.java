@@ -14,4 +14,11 @@ public class Doctor {
     public void careForPatient(Patient sickPatient) {
         sickPatient.increaseHealthLevel(10);
     }
+    public void drawBlood(Patient sickPatient) {
+        sickPatient.decreaseBloodLevel(5);
+    }
+
+    public int calculatePay() {
+        return 90000;
+    }
 }
