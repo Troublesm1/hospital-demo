@@ -10,4 +10,8 @@ public class Doctor {
         this.name = name;
         this.speciality = speciality;
     }
+
+    public void careForPatient(Patient sickPatient) {
+        sickPatient.increaseHealthLevel(10);
+    }
 }
