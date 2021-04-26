@@ -1,3 +1,5 @@
+package hospital;
+
 import hospital.Doctor;
 import hospital.Patient;
 import org.junit.jupiter.api.Test;

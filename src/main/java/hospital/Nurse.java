@@ -1,3 +1,5 @@
+package hospital;
+
 import hospital.HospitalEmployee;
 import hospital.MedicalDuties;
 import hospital.Patient;
