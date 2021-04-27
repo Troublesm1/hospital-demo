@@ -7,11 +7,11 @@ public class Hospital {
 
     Map<String, HospitalEmployee> employeeList = new HashMap<>();
 
-    public void hire(Doctor doctor) {
-        employeeList.put(doctor.getEmployeeNumber(), doctor);
+    public void hire(HospitalEmployee employeeToHire) {
+        employeeList.put(employeeToHire.getEmployeeNumber(), employeeToHire);
     }
 
-    public Doctor findEmployee(String employeeNumber) {
-        return (Doctor) employeeList.get(employeeNumber);
+    public HospitalEmployee findEmployee(String employeeNumber) {
+        return (HospitalEmployee) employeeList.get(employeeNumber);
     }
 }

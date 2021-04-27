@@ -14,7 +14,19 @@ public class HospitalTest {
     @Test
     public void shouldBeAbleToHireADoctor(){
         underTest.hire(doctor);
-        Doctor foundDoctor = underTest.findEmployee("1");
+        HospitalEmployee foundDoctor = underTest.findEmployee("1");
         assertEquals("doctor name", foundDoctor.getName());
+    }
+    @Test
+    public void shouldBeAbleToHireADoctorNurseAndJanitor(){
+        underTest.hire(doctor);
+        underTest.hire(nurse);
+        underTest.hire(janitor);
+        HospitalEmployee foundDoctor = underTest.findEmployee("1");
+        HospitalEmployee foundNurse = underTest.findEmployee("2");
+        HospitalEmployee foundJanitor = underTest.findEmployee("3");
+        assertEquals("doctor name",foundDoctor.getName());
+        assertEquals("nurse name",foundNurse.getName());
+        assertEquals("janitor name",foundJanitor.getName());
     }
 }
