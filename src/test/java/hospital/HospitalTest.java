@@ -41,4 +41,12 @@ public class HospitalTest {
         Collection<HospitalEmployee> hiredEmployees = underTest.getAllEmployees();
         assertThat(hiredEmployees, containsInAnyOrder(doctor, nurse, janitor));
     }
+    @Test
+    public void ShouldDisplayAllMedicalPersonnelOnly(){
+        underTest.hire(doctor);
+        underTest.hire(nurse);
+        underTest.hire(janitor);
+        Collection<HospitalEmployee> medicalEmployees = underTest.getMedicalEmployees();
+        assertThat(medicalEmployees, containsInAnyOrder(doctor, nurse));
+    }
 }
