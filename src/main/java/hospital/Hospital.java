@@ -8,6 +8,8 @@ import java.util.Map;
 public class Hospital {
 
     Map<String, HospitalEmployee> employeeList = new HashMap<>();
+    Map<Integer, Patient> patientList = new HashMap<>();
+    private int patientId;
 
     public void hire(HospitalEmployee employeeToHire) {
         employeeList.put(employeeToHire.getEmployeeNumber(), employeeToHire);
@@ -29,5 +31,15 @@ public class Hospital {
             }
         }
      return medicalEmployees;
+    }
+
+    public void admit(Patient patientToAdmit) {
+        patientId++;
+        patientList.put(patientId, patientToAdmit);
+
+    }
+
+    public Collection<Patient> getAllPatients() {
+        return patientList.values();
     }
 }

@@ -49,4 +49,13 @@ public class HospitalTest {
         Collection<HospitalEmployee> medicalEmployees = underTest.getMedicalEmployees();
         assertThat(medicalEmployees, containsInAnyOrder(doctor, nurse));
     }
+    @Test
+    public void shouldAdmitTwoPatients(){
+        Patient sickPatient = new Patient();
+        Patient sickerPatient = new Patient(5,10);
+        underTest.admit(sickPatient);
+        underTest.admit(sickerPatient);
+        Collection<Patient> admittedPatients = underTest.getAllPatients();
+        assertThat(admittedPatients, containsInAnyOrder(sickPatient, sickerPatient));
+    }
 }
