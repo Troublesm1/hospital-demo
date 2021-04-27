@@ -4,8 +4,8 @@ public class Receptionist extends Administrator {
 
     private boolean isOnPhone;
 
-    public Receptionist(java.lang.String employeeNumber, java.lang.String name) {
-        super(employeeNumber, name);
+    public Receptionist(String employeeNumber, String name, String department) {
+        super(employeeNumber, name, department);
         this.isOnPhone = isOnPhone;
     }
 
