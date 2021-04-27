@@ -16,7 +16,6 @@ public class Doctor extends HospitalEmployee implements MedicalDuties {
     public void drawBlood(Patient sickPatient) {
         sickPatient.decreaseBloodLevel(5);
     }
-
     @Override
     public int calculatePay() {
         return 90000;
