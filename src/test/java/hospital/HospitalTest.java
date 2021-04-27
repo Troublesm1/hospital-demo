@@ -2,6 +2,10 @@ package hospital;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HospitalTest {
@@ -28,5 +32,13 @@ public class HospitalTest {
         assertEquals("doctor name",foundDoctor.getName());
         assertEquals("nurse name",foundNurse.getName());
         assertEquals("janitor name",foundJanitor.getName());
+    }
+    @Test
+    public void shouldBeAbleToHireACollectionOfEmployees(){
+        underTest.hire(doctor);
+        underTest.hire(nurse);
+        underTest.hire(janitor);
+        Collection<HospitalEmployee> hiredEmployees = underTest.getAllEmployees();
+        assertThat(hiredEmployees, containsInAnyOrder(doctor, nurse, janitor));
     }
 }

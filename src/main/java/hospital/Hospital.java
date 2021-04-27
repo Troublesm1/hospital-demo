@@ -1,5 +1,6 @@
 package hospital;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,5 +14,9 @@ public class Hospital {
 
     public HospitalEmployee findEmployee(String employeeNumber) {
         return (HospitalEmployee) employeeList.get(employeeNumber);
+    }
+
+    public Collection<HospitalEmployee> getAllEmployees() {
+        return employeeList.values();
     }
 }
